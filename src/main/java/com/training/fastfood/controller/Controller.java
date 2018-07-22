@@ -11,13 +11,13 @@ public class Controller {
     }
 
     public void doAction(String input) {
-        String itemName = "Pepsi";
-        switch (input) {
+        String[] inputParts = prepareInputParts(input);
+        switch (inputParts[0]) {
             case "add":
-                addToCart(itemName);
+                addToCart(inputParts[1]);
                 break;
             case "remove":
-                removeFromCart(itemName);
+                removeFromCart(inputParts[1]);
                 break;
             case "show":
                 showCart();
@@ -30,6 +30,14 @@ public class Controller {
             default:
                 System.out.println("Unsupported command: " + input);
         }
+    }
+
+    private String[] prepareInputParts(String input) {
+        final String[] inputParts = input.split(" ");
+        if (inputParts.length > 2 || inputParts.length < 1) {
+            throw new IllegalArgumentException("The input should have 1 or 2 parts separated by space!");
+        }
+        return inputParts;
     }
 
     private void order() {
@@ -50,19 +58,19 @@ public class Controller {
     private void addToCart(String itemName) {
         switch (itemName) {
             case "Pepsi":
-                cart.addItem(itemName);
+                cart.addItem(new Object());
                 System.out.println("Added " + itemName + " to cart!");
                 break;
             case "Water":
-                cart.addItem(itemName);
+                cart.addItem(new Object());
                 System.out.println("Added " + itemName + " to cart!");
                 break;
             case "Burger":
-                cart.addItem(itemName);
+                cart.addItem(new Object());
                 System.out.println("Added " + itemName + " to cart!");
                 break;
             case "Salad":
-                cart.addItem(itemName);
+                cart.addItem(new Object());
                 System.out.println("Added " + itemName + " to cart!");
                 break;
             default:
