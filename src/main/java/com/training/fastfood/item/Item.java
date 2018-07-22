@@ -1,4 +1,9 @@
 package com.training.fastfood.item;
 
-public class Item {
+public interface Item {
+
+    String getShortName();
+    String getFullName();
+    int getCalories();
+    float getPrice();
 }

@@ -1,6 +1,10 @@
 package com.training.fastfood.controller;
 
 import com.training.fastfood.cart.Cart;
+import com.training.fastfood.item.drink.Pepsi;
+import com.training.fastfood.item.drink.Water;
+import com.training.fastfood.item.snack.Burger;
+import com.training.fastfood.item.snack.Salad;
 
 public class Controller {
 
@@ -42,7 +46,7 @@ public class Controller {
 
     private void order() {
         System.out.println("Your order has been submitted. Please go to the register to pick it up!");
-        cart.emptyCart();
+        cart.submitOrder();
     }
 
     private void showCart() {
@@ -58,19 +62,19 @@ public class Controller {
     private void addToCart(String itemName) {
         switch (itemName) {
             case "Pepsi":
-                cart.addItem(new Object());
+                cart.addItem(new Pepsi());
                 System.out.println("Added " + itemName + " to cart!");
                 break;
             case "Water":
-                cart.addItem(new Object());
+                cart.addItem(new Water());
                 System.out.println("Added " + itemName + " to cart!");
                 break;
             case "Burger":
-                cart.addItem(new Object());
+                cart.addItem(new Burger());
                 System.out.println("Added " + itemName + " to cart!");
                 break;
             case "Salad":
-                cart.addItem(new Object());
+                cart.addItem(new Salad());
                 System.out.println("Added " + itemName + " to cart!");
                 break;
             default:
