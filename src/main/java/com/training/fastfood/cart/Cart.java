@@ -21,7 +21,7 @@ public class Cart {
 
     public void removeItem(String itemName) {
         for (Item item : items) {
-            if(item.getShortName().equals(itemName)) {
+            if (item.getShortName().equals(itemName)) {
                 items.remove(item);
                 return;
             }
@@ -36,9 +36,17 @@ public class Cart {
         items = new ArrayList<>();
     }
 
+    public void addItem(Item item) {
+        items.add(item);
+    }
+
+    public int getCartSize() {
+        return items.size();
+    }
+
     private float calculateTotalPrice() {
         float result = 0;
-        for(int i = 0; i < items.size(); i++) {
+        for (int i = 0; i < items.size(); i++) {
             result += items.get(i).getPrice();
         }
         return result;
@@ -46,17 +54,9 @@ public class Cart {
 
     private int calculateTotalCalories() {
         int result = 0;
-        for(int i = 0; i < items.size(); i++) {
+        for (int i = 0; i < items.size(); i++) {
             result += items.get(i).getCalories();
         }
         return result;
-    }
-
-    public void addItem(Item item) {
-        items.add(item);
-    }
-
-    public int getCartSize() {
-        return items.size();
     }
 }

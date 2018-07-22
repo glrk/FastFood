@@ -36,6 +36,10 @@ public class Controller {
         }
     }
 
+    int getControllerCartSize() {
+        return cart.getCartSize();
+    }
+
     private String[] prepareInputParts(String input) {
         final String[] inputParts = input.split(" ");
         if (inputParts.length > 2 || inputParts.length < 1) {
